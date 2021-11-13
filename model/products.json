@@ -1,0 +1,16 @@
+[
+    {
+        "id": 0,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/0/08/LGwashingmachine.jpg",
+        "name": "Fan",
+        "price": 250,
+        "quantity": 2
+    },
+    {
+        "id": 1,
+        "image": "https://mobileimages.lowes.com/productimages/11466a14-9bc2-4f05-99ee-340bc5b64ea1/12006010.jpg?size=pdhi",
+        "name": "Washing machine",
+        "price": 180,
+        "quantity": 15
+    }
+]
