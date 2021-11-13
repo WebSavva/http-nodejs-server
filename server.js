@@ -1,4 +1,6 @@
 const http = require('http');
+const fs = require('fs');
+const path = require('path');
 
 class RoutedServer {
     constructor() {
@@ -29,6 +31,8 @@ class RoutedServer {
     }
 }
 
+// Reading data and storing it in the object as a cache
+const products = JSON.parse( fs.readFileSync(path.resolve(__dirname, 'products.json'), 'utf-8') );
 const server = new RoutedServer();
 
 server.route('/hello', (req, res) => {
@@ -41,6 +45,14 @@ server.route('/hello', (req, res) => {
 
 server.route('/check', (req, res) => {
     res.end('Double check is required');
+});
+
+server.route('/products', (req, res) => {
+    res.writeHead(200, {
+        'Content-Type': 'application/json'
+    });
+
+    res.end(JSON.stringify(products));
 });
 
 server.start(() => console.log('Routed server is up and running'))
